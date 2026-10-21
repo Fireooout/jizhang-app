@@ -1,0 +1,16 @@
+{
+  "appId": "tech.plaseco.jz",
+  "appName": "项目记账",
+  "webDir": "www",
+  "server": {
+    "url": "https://jz.plaseco.tech",
+    "androidScheme": "https",
+    "cleartext": false,
+    "errorPath": "error.html"
+  },
+  "android": {
+    "appendUserAgent": "JizhangApp/1.0",
+    "allowMixedContent": false,
+    "backgroundColor": "#2f4a3e"
+  }
+}

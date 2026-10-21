@@ -1,0 +1,12 @@
+{
+  "name": "jizhang-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "项目记账 Android App（Capacitor 壳，加载 https://jz.plaseco.tech）",
+  "scripts": { "sync": "cap sync android" },
+  "dependencies": {
+    "@capacitor/android": "6.2.1",
+    "@capacitor/core": "6.2.1"
+  },
+  "devDependencies": { "@capacitor/cli": "6.2.1" }
+}
