@@ -5,6 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -52,3 +55,13 @@ jobs:
           name: jizhang-apk
           path: 项目记账-v1.0.*.apk
           retention-days: 30
+
+      - name: 发布到 Releases（固定下载链接）
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=v1.0.${{ github.run_number }}
+          cp 项目记账-$TAG.apk jizhang.apk
+          gh release create "$TAG" 项目记账-$TAG.apk jizhang.apk \
+            --title "项目记账 $TAG" --latest \
+            --notes "安卓安装包。最新版固定下载地址：https://github.com/${{ github.repository }}/releases/latest/download/jizhang.apk"
